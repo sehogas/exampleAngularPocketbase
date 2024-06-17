@@ -1,0 +1,44 @@
+<div mat-dialog-title>
+    {{ title }}
+</div>
+<form [formGroup]="fg">
+    <div mat-dialog-content class="content">
+        @if (visibleKey) {
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>ID</mat-label>
+                    <input matInput type="number" formControlName="id">
+                </mat-form-field>
+            </div>
+        }
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Detail</mat-label>
+                <input matInput type="text" formControlName="detail">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label for="status">Status</mat-label>
+                <select id="status" style="display: none;"></select>  <!-- correccion de bug -->
+                <mat-select formControlName="status" id="status">
+                    @for (i of statuses; track i) {
+                        <mat-option [value]="i">{{ i }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</form>
+<div mat-dialog-actions>
+    <button mat-raised-button type="button" [mat-dialog-close]="false">{{ data.mode == 'view' ? 'Close' : 'Cancel'}}</button>
+    @if (data.mode!='view') {
+        <button mat-raised-button color="accent" (click)="onSave()" [disabled]="fg.invalid">Save</button>
+    }
+</div>

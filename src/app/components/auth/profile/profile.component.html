@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+
+            <div class="picture">
+                <img class="avatar" [src]="profileForm.controls.avatar.value" width="150px" height="150px">
+            </div>
+
+            <input type="file" class="file-input" accept="image/*" (change)="onFileSelected($event)" hidden #fileUpload>
+
+            <div class="file-upload">
+                <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+                <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <br>
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <h3>Profile</h3>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Name" autocomplete="off" formControlName="name">
+                    <mat-error>
+                        Please provide a valid name
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary">Apply changes</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

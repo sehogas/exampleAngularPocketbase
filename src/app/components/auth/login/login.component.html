@@ -1,0 +1,31 @@
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <h3>Login</h3>
+                <!-- @if (loginForm.controls.email.invalid || loginForm.controls.password.invalid) {
+                    <mat-error>
+                        The username and password were not recognized
+                    </mat-error>
+                } -->
+                <mat-form-field>
+                    <input matInput placeholder="Email" type="email" autocomplete="off" formControlName="email">
+                    <mat-error>
+                        Please provide a valid email address 
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="password" placeholder="Password" autocomplete="off" formControlName="password">
+                    <mat-error>
+                        Please provide a valid password 
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
+            </form>
+            <br>
+            <button mat-button class="button-width" routerLink="/reset-password">Forgot password?</button><span><button mat-button class="button-width" routerLink="/register">Sign Up here</button></span> 
+            <p>OR</p>
+            <button mat-raised-button style="padding: 1rem;" (click)="loginWithGoogle()"><mat-icon style="width: 50px; height:30px" svgIcon="logoGoogle"></mat-icon> Login with Google</button>
+        </mat-card-content>
+    </mat-card>
+</div>

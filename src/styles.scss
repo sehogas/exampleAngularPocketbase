@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.disable-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #2d2d2d;
+  opacity: 0.8;
+  z-index: 998;
+  height: 100%;
+  width: 100%;
+}
+
+.red-snackbar {
+  max-width: max-content !important;
+  --mdc-snackbar-supporting-text-color: #fff;
+  --mdc-snackbar-container-color: rgb(184, 74, 74);
+  --mat-snack-bar-button-color: rgb(244, 178, 178) !important;
+}
+
+.green-snackbar {
+  max-width: max-content !important;
+  --mdc-snackbar-supporting-text-color: black;
+  --mdc-snackbar-container-color: #b3efe0;
+  --mat-snack-bar-button-color: black !important;
+}
+
+.gray-snackbar {
+  max-width: max-content !important;
+  --mdc-snackbar-supporting-text-color: black;
+  --mdc-snackbar-container-color: #cdcfcf;
+  --mat-snack-bar-button-color: black !important;
+}
+
+.yellow-snackbar {
+  max-width: max-content !important;
+  --mdc-snackbar-supporting-text-color: black;
+  --mdc-snackbar-container-color: #e1e8a2;
+  --mat-snack-bar-button-color: black !important;
+}
+
+.blue-snackbar {
+  max-width: max-content !important;
+  --mdc-snackbar-supporting-text-color: white;
+  --mdc-snackbar-container-color: #2196F3;
+  --mat-snack-bar-button-color: black !important;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
